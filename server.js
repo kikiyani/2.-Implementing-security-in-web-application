@@ -105,8 +105,7 @@ MongoClient.connect(db, (err, db) => {
     app.engine(".html", consolidate.swig);
     app.set("view engine", "html");
     app.set("views", `${__dirname}/app/views`);
-    // Fix for A5 - Security MisConfig
-    // TODO: make sure assets are declared before app.use(session())
+    
     app.use(express.static(`${__dirname}/app/assets`));
 
 
